@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - SENATI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/login.css') }}">
+</head>
+<body>
+    <div class="login-container form-signin">
+        <div class="header-card">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='assets/imgs/senati_logo.png') }}" alt="Logo SENATI" class="senati-logo">
+            </div>
+            <h1>Bienvenido</h1>
+            <p>Accede a tu sistema de gestión</p>
+        </div>
+        
+        <form method="POST" class="login-form">
+            <h2 class="form-title">Iniciar sesión</h2>
+            
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input name="username" placeholder="Usuario" required class="form-control" type="text">
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" name="password" placeholder="Contraseña" required class="form-control" id="passwordInput">
+                <i class="fas fa-eye password-toggle-icon" id="togglePassword"></i>
+            </div>
+            
+            <button type="submit" class="btn btn-lg btn-primary">
+                <i class="fas fa-sign-in-alt"></i> Entrar
+            </button>
+        </form>
+        
+        <p class="mt-3 text-center">
+            <a href="{{ url_for('register') }}" class="solicitar-acceso">Crear cuenta nueva</a>
+        </p>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
